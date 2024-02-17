@@ -24,7 +24,7 @@ jobs:
         run: |
 
           # Clone the private repo
-          git clone --depth 1 --branch main https://github.com/meryjoy99/CV-private-.git CV-private-
+          git clone https://github.com/meryjoy99/CV-private-.git
 
           # Copy the PDF to public repo
           cp output/cv.pdf public-cv/
