@@ -19,12 +19,12 @@ jobs:
       - name: Copy PDF
         run: |
           # Replace with the actual paths to your PDF files
-          cp meryjoy99/CV-private/output/cv.pdf meryjoy99/public-cv/cv.pdf
+          cp meryjoy99/CV-private-/output/cv.pdf meryjoy99/public-cv/cv.pdf
 
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add path/to/public-repo/your-pdf.pdf
+          git add meryjoy99/public-cv/cv.pdf
           git commit -m "Sync PDF"
           git push
