@@ -1,4 +1,4 @@
-name: Sync PDF
+name: Sync PDF to Public Repo
 
 permissions:
   write-all
@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
+      - main  # Adjust this to your default branch name
 
 jobs:
   sync:
@@ -16,15 +16,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Copy PDF
+      - name: Sync PDF
         run: |
-          # Replace with the actual paths to your PDF files
-          cp meryjoy99/CV-private-/output/cv.pdf meryjoy99/public-cv/cv.pdf
+          # Replace with your actual PDF file path in the private repo
+          PDF_PATH="output/cv.pdf"
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add meryjoy99/public-cv/cv.pdf
+          # Clone the private repo
+          git clone --depth 1 --branch main https://github.com/meryjoy99/CV-private-.git CV-private
+
+          # Copy the PDF to your public repo
+          cp "$PDF_PATH" public-cv/
+
+          # Commit and push changes
+          cd public-cv
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
           git commit -m "Sync PDF"
-          git push
+          git push origin main
