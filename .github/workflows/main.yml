@@ -24,9 +24,7 @@ jobs:
         run: |
 
           # Clone the private repo
-          git clone https://github.com/meryjoy99/CV-private-.git
-
-          # Copy the PDF to public repo
+          git clone https://.:${{ secrets.MY_GITHUB_TOKEN }}@github.com/meryjoy99/CV-private- CV-private-  # Copy the PDF to public repo
           cp output/cv.pdf public-cv/
 
           # Commit and push changes
