@@ -1,5 +1,5 @@
 # My Curriculum Vitae
-You can view it in the cv.pdf file or download it [here](https://github.com/maria-a-gutierrez/public-cv/raw/main/cv.pdf).
+You can view it in the [cv.pdf file](https://github.com/maria-a-gutierrez/public-cv/blob/main/cv.pdf) or download it [here](https://github.com/maria-a-gutierrez/public-cv/raw/main/cv.pdf).
 
 ## Meta
 What is the point of this repository? 
